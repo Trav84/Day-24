@@ -1,0 +1,41 @@
+#app-view {
+	text-align: center;
+	margin:0.5em 0;
+}
+
+h1 {
+	font-size:3em;
+	font-weight:600;
+	margin-top:1em;
+	margin-bottom: 0.5em;
+}
+
+input {
+	width:300px;
+	font-size:1.4em;
+}
+
+#text-input-box {
+	margin-bottom: 1em;
+}
+
+ul {
+	border-top:1px solid #88b0d8;
+}
+
+li {
+	line-height:1.4em;
+	margin: 0.4em 0.4em;
+	font-size:1.4em;
+	letter-spacing: 0.5em;
+	border: 1px solid black;
+	border-radius:15px;
+}
+
+.item-check-box {
+	text-decoration: none;
+}
+
+.item-check-box-striked {
+	text-decoration: line-through;
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+	
+<html>
+	<head>
+		<title> To Do App </title>
+		<link rel="stylesheet" href="backbone-view/styles/reset.css">
+		<link rel="stylesheet" href="backbone-view/styles/style.css">
+	</head>
+
+	<section id ='app-view'>
+
+	<h1> To Do List </h1>
+
+	<input type='text' id='text-input-box' placeholder='Enter your item to do here'>
+	<div class="error"></div>
+
+	<ul id='display-list'>
+
+	</ul>
+
+	</section>
+
+	<script type='html' id='template'>
+		<li>  <%= itemToDo %> <input type="checkbox" class='item-check-box'> </li> 
+	</script>
+
+	<body>
+
+		<script type='text/javascript' src='backbone-view/bower_components/jquery/dist/jquery.min.js'></script>
+		<script type='text/javascript' src='backbone-view/bower_components/underscore/underscore-min.js'></script>
+		<script type='text/javascript' src='backbone-view/bower_components/backbone/backbone.js'></script>
+		<script type='text/javascript' src='backbone-view/scripts//models/ToDoModel.js'></script>
+		<script type='text/javascript' src='backbone-view/scripts//collections/ToDoCollection.js'></script>
+		<script type='text/javascript' src='backbone-view/scripts//views/ListItemView.js'></script>
+		<script type='text/javascript' src='backbone-view/scripts//views/AppView.js'></script>
+		<script type='text/javascript' src='backbone-view/scripts/main.js'></script>
+	</body>
+</html>

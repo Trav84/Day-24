@@ -1,50 +1,42 @@
 <!DOCTYPE html>
-	
+
 <html>
 	<head>
 		<title> To Do App </title>
 		<link rel="stylesheet" href="backbone-view/styles/reset.css">
 		<link rel="stylesheet" href="backbone-view/styles/style.css">
-	</head>
-
-	<body>
-
-	<section id='left-bar'>
-		<h1> Get It Done </h1>
-	</section>
-		
-	<section id ='app-view'>
-
-	
-	<div class="header-text">
-		<h1> Get It Done allows you to create errands, chores, or reminders to..well, get done! </h1>
-		<h2> Simply type in your item to do and hit enter. </h2>
-		<h2> Once you have finished the task, click the checkbox next to it to mark it out. </h2>
-	</div>
-
-	<input type='text' id='text-input-box' placeholder='Enter your item to do here'>
-	<button id='delete-button'> Delete List </button>
-	<div class="error"> </div>
-
-	<ul id='display-list'>
-
-	</ul>
-
-	</section>
-
-	<script type='html' id='template'>
-		<li>  <%= itemToDo %> <input type="checkbox" class='item-check-box'> </li> 
-	</script>
-
-
-
-		<script type='text/javascript' src='backbone-view/bower_components/jquery/dist/jquery.min.js'></script>
-		<script type='text/javascript' src='backbone-view/bower_components/underscore/underscore-min.js'></script>
-		<script type='text/javascript' src='backbone-view/bower_components/backbone/backbone.js'></script>
-		<script type='text/javascript' src='backbone-view/scripts//models/ToDoModel.js'></script>
-		<script type='text/javascript' src='backbone-view/scripts//collections/ToDoCollection.js'></script>
-		<script type='text/javascript' src='backbone-view/scripts//views/ListItemView.js'></script>
-		<script type='text/javascript' src='backbone-view/scripts//views/AppView.js'></script>
-		<script type='text/javascript' src='backbone-view/scripts/main.js'></script>
-	</body>
-</html>
+		<link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+		</head>
+		<body>
+			<section id='left-bar'>
+				<h1> Get It Done </h1>
+			</section>
+			
+			<section id ='app-view'>
+				
+				<div class="header-text">
+					<h1> Get It Done allows you to create errands, chores, or reminders to..well, get done! </h1>
+					<h2> Simply type in your item to do and hit enter </h2>
+					<h2> Once you have finished the task, click the checkbox next to it to mark it out </h2>
+				</div>
+				<input type='text' id='text-input-box' placeholder='Enter your item to do here'>
+				
+				<div class="error"> </div>
+				<hr>
+				<ul id='display-list'>
+				</ul>
+				<button id='delete-button'> Delete List </button>
+			</section>
+			<script type='text/html' id='template'>
+				<li class='created-list-item'>  <%= itemToDo %> <input type="checkbox" class='item-check-box'> </li>
+			</script>
+			<script type='text/javascript' src='backbone-view/bower_components/jquery/dist/jquery.min.js'></script>
+			<script type='text/javascript' src='backbone-view/bower_components/underscore/underscore-min.js'></script>
+			<script type='text/javascript' src='backbone-view/bower_components/backbone/backbone.js'></script>
+			<script type='text/javascript' src='backbone-view/scripts//models/ToDoModel.js'></script>
+			<script type='text/javascript' src='backbone-view/scripts//collections/ToDoCollection.js'></script>
+			<script type='text/javascript' src='backbone-view/scripts//views/ListItemView.js'></script>
+			<script type='text/javascript' src='backbone-view/scripts//views/AppView.js'></script>
+			<script type='text/javascript' src='backbone-view/scripts/main.js'></script>
+		</body>
+	</html>

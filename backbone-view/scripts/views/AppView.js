@@ -7,7 +7,8 @@ var AppView = Backbone.View.extend({
 			this,
 			'onKeyUp',
 			'createNewItem',
-			'onCollectionsAdded'
+			'onCollectionsAdded',
+			'onDeleteCollectionClick'
 		);
 
 		this.itemsCollection = new ToDoCollection();
@@ -16,12 +17,14 @@ var AppView = Backbone.View.extend({
 		this.$displayList = $('#display-list');
 		this.$itemCheckBox = $('.item-check-box');
 		this.$error = $('.error');
+		this.$delButton = $('#delete-button');
 
 		this.$textBox.on('keyup', this.onKeyUp);
 		this.$itemCheckBox.on('change', this.onCheckedBox);
 		this.itemsCollection.on('add', this.onCollectionsAdded);
+		this.$delButton.on('click', this.onDeleteCollectionClick);
 
-		//this.updateFromSever();
+		this.itemsCollection.fetch();
 
 	},
 
@@ -54,13 +57,27 @@ var AppView = Backbone.View.extend({
 		this.$displayList.append(itemView.$el);
 	},
 
-	// updateFromSever: function() {
-	// 	// Poll every 10 seconds to keep the channel model up-to-date.
-	// 	this.newItem = new ToDoModel();
-	// 	this.newItem.fetch();
-	// 	var itemView = new ListItemView({model: this.newItem});
-	// 	this.$displayList.append(itemView.$el);
+	onDeleteCollectionClick: function() {
+		console.log('click');
+		var self = this;
 
-	// }
+		// this.itemsCollection.each(function(model) {
+		// 	console.log(model);
+		// 	// self.itemsCollection.remove(model);
+		// 	model.destroy({
+		// 		success: function() {
+		// 			console.log('success');
+		// 		},
+		// 		error: function() {
+		// 			console.log('error');
+		// 		}
+		// 	});
+		// 	console.log('destroyed');
+		// });
 
+		while(this.itemsCollection.length!==0) {
+				this.itemsCollection.at(0).destroy();
+		}
+		
+	}
 });
